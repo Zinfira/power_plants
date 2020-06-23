@@ -1,5 +1,7 @@
 // This function stores our state.
 
+export const plant = {"soil": 0, "water": 0, "light": 0}
+
 const storeState = () => {
   let currentState = {};
   return (stateChangeFunction) => {
@@ -9,7 +11,7 @@ const storeState = () => {
   }
 }
 
-const stateChanger = storeState();
+export const stateChanger = storeState();
 
 // This is a function factory. We can easily create more specific functions that alter a plant's soil, water, and light to varying degrees.
 
@@ -29,8 +31,10 @@ export const hydrate = changeState("water");
 export const giveLight = changeState("light");
 
 export const blueFood = changeState("soil")(5);
-export const greenFood = changeState("soil")(10)
-export const yuckyFood = changeState("soil")(-5)
+export const greenFood = changeState("soil")(10);
+export const yuckyFood = changeState("soil")(-5);
+
+export const flower = storeState(plant);
 
 // $(document).ready(function() {
 

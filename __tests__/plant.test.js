@@ -1,4 +1,4 @@
-import { feed, blueFood, hydrate, giveLight, greenFood, yuckyFood } from './../src/plant.js';
+import { feed, blueFood, hydrate, giveLight, greenFood, yuckyFood, changeState, plant, stateChanger } from './../src/plant.js';
 
 describe('feed', () => {
   test('should increment a plant soil by 1', () => {
@@ -29,5 +29,12 @@ describe('giveLight', () => {
     const plant = {};
     const newPlant = giveLight(1)(plant);
     expect(newPlant.light).toEqual(1);
+  });
+});
+
+describe('stateChanger', () => {
+  test('should change state by a specified function', () => {
+    const fedPlant = stateChanger(greenFood);
+    expect(fedPlant.soil).toBe(10);
   });
 });
