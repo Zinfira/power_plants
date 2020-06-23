@@ -20,6 +20,11 @@ module.exports = {
       title: '',
       template: './src/index.html',
       inject: 'body'
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery/dist/jquery.min.js",
+      jQuery: "jquery/dist/jquery.min.js",
+      "window.jQuery": "jquery/dist/jquery.min.js"
     })
   ],
   module: {
