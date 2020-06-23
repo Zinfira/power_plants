@@ -23,3 +23,11 @@ describe('hydrate', () => {
     expect(newPlant.water).toEqual(1);
   });
 });
+
+describe('giveLight', () => {
+  test('should increment a plant light by 1', () => {
+    const plant = {};
+    const newPlant = giveLight(1)(plant);
+    expect(newPlant.light).toEqual(1);
+  });
+});
