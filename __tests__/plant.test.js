@@ -1,9 +1,17 @@
-import { feed } from './../src/plant.js';
+import { feed, blueFood } from './../src/plant.js';
 
 describe('feed', () => {
   test('should increment a plant soil by 1', () => {
     const plant = {};
     const newPlant = feed(1)(plant)
     expect(newPlant.soil).toEqual(1);
+  });
+});
+
+describe('blueFood', () => {
+  test('should increment a plant soil by 5', () => {
+    const plant = {};
+    const newPlant = blueFood(plant)
+    expect(newPlant.soil).toEqual(5);
   });
 });
